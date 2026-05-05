@@ -46,11 +46,6 @@
       background: #0ea5e9;
     }
 
-    #content {
-      display: none;
-      margin-top: 20px;
-    }
-
     .error {
       color: #f87171;
       margin-top: 10px;
@@ -61,15 +56,13 @@
 
 <div class="box">
   <h2>Enter Password</h2>
+
   <input type="password" id="password" placeholder="Password">
   <br>
-  <button onclick="checkPassword()">Unlock</button>
-  <p class="error" id="error"></p>
 
-  <div id="content">
-    <h3>🔓 Access Granted</h3>
-    <p>Welcome to the hidden content.</p>
-  </div>
+  <button onclick="checkPassword()">Unlock</button>
+
+  <p class="error" id="error"></p>
 </div>
 
 <script>
@@ -80,8 +73,8 @@
     const error = document.getElementById("error");
 
     if (input === correctPassword) {
-      document.getElementById("content").style.display = "block";
-      error.textContent = "";
+      // go to main page
+      window.location.href = "main.html";
     } else {
       error.textContent = "Wrong password!";
     }
